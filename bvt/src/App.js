@@ -1,23 +1,31 @@
 import React from 'react';
 import './App.css';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
-import point from './data/db.json'
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import MainNavbar from './components/MainNavbar';
+import DarkMap from './views/DarkMap';
+import LightMap from './views/LightMap';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
 
   return (
-    <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={true}>
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-      {point.map(points => (
-        <Marker
-          key={points.id}
-          position={[points.latitude, points.longitude]}>
-        </Marker>
-      ))}
-    </MapContainer>
+    <div className='App'>
+      <Routes>
+
+        <Route
+          path="/"
+          element={
+            <LightMap />
+          }
+        />
+        <Route
+          path="/dark"
+          element={
+            <DarkMap />
+          }
+        />
+      </Routes>
+    </div>
   );
 }
 
