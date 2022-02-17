@@ -3,6 +3,7 @@ import LeftSidebar from './LeftSidebar';
 import RightSidebar from './RightSidebar';
 import { useNavigate } from 'react-router-dom'
 import Avatar from '@mui/material/Avatar';
+import { useTranslation } from 'react-i18next';
 
 function MainNavbar() {
     let navigate = useNavigate();
@@ -11,6 +12,11 @@ function MainNavbar() {
     }
     const toDark = () => {
         navigate('/dark')
+    }
+
+    const { t, i18n } = useTranslation();
+    function handleClick(lang){
+        i18n.changeLanguage(lang);
     }
 
     return (
@@ -25,20 +31,26 @@ function MainNavbar() {
                             onClick={(e) => {
                                 e.preventDefault();
                                 toLight();
-                            }}>Light Mode</Nav.Link>
+                            }}>{t('Light.1')}</Nav.Link>
 
                         <Nav.Link
                             style={{ marginLeft: '2vh' }}
                             onClick={(e) => {
                                 e.preventDefault();
                                 toDark();
-                            }}>Dark Mode</Nav.Link>
+                            }}>{t('Dark.1')}</Nav.Link>
 
-                        <div style={{ marginLeft: '110vh' }}>
-                            <NavDropdown title="Language" id="basic-nav-dropdown">
-                                <NavDropdown.Item href="#action/3.1">Bahasa Indonesia</NavDropdown.Item>
+                        <div style={{ marginLeft: '100vh' }}>
+                            <NavDropdown title={t('Language.1')} id="basic-nav-dropdown">
+                                <NavDropdown.Item
+                                    onClick={() => handleClick('id')}
+                                >
+                                    Bahasa Indonesia</NavDropdown.Item>
                                 <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action/3.2">English</NavDropdown.Item>
+                                <NavDropdown.Item
+                                    onClick={() => handleClick('en')}
+                                >
+                                    English</NavDropdown.Item>
                             </NavDropdown>
                         </div>
                     </Nav>
