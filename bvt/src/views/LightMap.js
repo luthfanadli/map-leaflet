@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import MainNavbar from '../components/MainNavbar';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchPoint } from '../store/actionCreator/pointAction';
@@ -7,7 +7,7 @@ import { fetchPoint } from '../store/actionCreator/pointAction';
 function LightMap() {
   const { point } = useSelector(state => state.pointReducer);
   const dispatch = useDispatch();
-  
+
   useEffect(() => {
     dispatch(fetchPoint())
   }, [])
