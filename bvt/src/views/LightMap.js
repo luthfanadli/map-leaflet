@@ -7,7 +7,7 @@ import { fetchPoint } from '../store/actionCreator/pointAction';
 function LightMap() {
   const { point } = useSelector(state => state.pointReducer);
   const dispatch = useDispatch();
-
+  
   useEffect(() => {
     dispatch(fetchPoint())
   }, [])

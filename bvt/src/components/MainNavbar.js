@@ -1,11 +1,10 @@
-import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
+import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 import LeftSidebar from './LeftSidebar';
+import RightSidebar from './RightSidebar';
 import { useNavigate } from 'react-router-dom'
 import Avatar from '@mui/material/Avatar';
-// import RightSidebar from './RightSidebar';
 
 function MainNavbar() {
-
     let navigate = useNavigate();
     const toLight = () => {
         navigate('/')
@@ -43,9 +42,9 @@ function MainNavbar() {
                             </NavDropdown>
                         </div>
                     </Nav>
-                    <Avatar style={{width: '7vh', height: '7vh'}} alt="Bhumi Varta Technology" src="https://media.licdn.cn/dms/image/C560BAQFWFLYyDMCkWA/company-logo_200_200/0/1611557316018?e=2159024400&v=beta&t=ID8DnGjkgG13V7hTRXb1IooLL3pkWLP-bNRhjc8f9Mk" />
+                    <Avatar style={{ width: '7vh', height: '7vh' }} alt="Bhumi Varta Technology" src="https://dicoding-web-img.sgp1.cdn.digitaloceanspaces.com/original/jobs/dos:lowongan_dicoding_pt_bhumi_varta_tech_181021153315.png" />
                 </Container>
-                {/* <RightSidebar></RightSidebar> */}
+                <RightSidebar></RightSidebar>
             </Navbar>
         </>
     )

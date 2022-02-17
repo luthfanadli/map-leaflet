@@ -7,10 +7,11 @@ import { fetchPoint } from '../store/actionCreator/pointAction';
 function DarkMap() {
   const { point } = useSelector(state => state.pointReducer);
   const dispatch = useDispatch();
-
+  
   useEffect(() => {
     dispatch(fetchPoint())
   }, [])
+
   return (
     <div>
       <MainNavbar />
