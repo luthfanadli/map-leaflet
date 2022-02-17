@@ -3,6 +3,7 @@ import { Button, Offcanvas } from 'react-bootstrap'
 import ListIcon from '@mui/icons-material/List';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchPoint } from '../store/actionCreator/pointAction';
+import { useTranslation } from 'react-i18next';
 
 function RightSidebar() {
     const [show, setShow] = useState(false);
@@ -16,6 +17,8 @@ function RightSidebar() {
         dispatch(fetchPoint())
     }, [])
 
+    const { t } = useTranslation();
+
     return (
         <>
             <ListIcon style={{ marginRight: "5vh", width: '40px', height: '40px', cursor: 'pointer' }} variant="primary" onClick={handleShow}></ListIcon>
@@ -23,7 +26,7 @@ function RightSidebar() {
             <Offcanvas style={{ width: '430px' }} show={show} placement={'end'} onHide={handleClose}>
 
                 <Offcanvas.Header>
-                    <Offcanvas.Title>Region Point List</Offcanvas.Title>
+                    <Offcanvas.Title>{t('Point.1')}</Offcanvas.Title>
                 </Offcanvas.Header>
 
                 {point.map(points => (
