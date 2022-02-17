@@ -18,7 +18,7 @@ function LeftSidebar() {
 
     return (
         <>
-            <ListIcon style={{ marginLeft: "5vh", width: '40px', height: '40px' }} variant="primary" onClick={handleShow}></ListIcon>
+            <ListIcon style={{ marginLeft: "5vh", width: '40px', height: '40px', cursor: 'pointer' }} variant="primary" onClick={handleShow}></ListIcon>
 
             <Offcanvas style={{ width: '430px' }} show={show} onHide={handleClose}>
 
@@ -28,7 +28,7 @@ function LeftSidebar() {
 
                 {point.map(points => (
                     <Button
-                    style={{marginBottom: '2vh'}}
+                        style={{ marginBottom: '2vh', cursor: 'default' }}
                         key={points.id}
                         className='d-flex'
                         variant="outline-success"
