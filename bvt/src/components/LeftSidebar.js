@@ -11,7 +11,7 @@ function LeftSidebar() {
 
     const { point } = useSelector(state => state.pointReducer);
     const dispatch = useDispatch();
-  
+
     useEffect(() => {
         dispatch(fetchPoint())
     }, [])
@@ -28,6 +28,7 @@ function LeftSidebar() {
 
                 {point.map(points => (
                     <Button
+                    style={{marginBottom: '2vh'}}
                         key={points.id}
                         className='d-flex'
                         variant="outline-success"
