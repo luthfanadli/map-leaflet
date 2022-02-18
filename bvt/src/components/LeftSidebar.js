@@ -29,16 +29,17 @@ function LeftSidebar() {
                     <Offcanvas.Title>{t('Point.1')}</Offcanvas.Title>
                 </Offcanvas.Header>
 
-                {point.map(points => (
-                    <Button
-                        style={{ marginBottom: '2vh', cursor: 'default' }}
+                {point.map(points => {
+                    return <Button
+                        points={points}
                         key={points.id}
+                        style={{ marginBottom: '2vh', cursor: 'default' }}
                         className='d-flex'
                         variant="outline-success"
                     >
                         {points.name}
                     </Button>
-                ))}
+                })}
 
             </Offcanvas>
         </>
