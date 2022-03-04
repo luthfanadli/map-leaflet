@@ -11,11 +11,12 @@ function LightMap() {
   useEffect(() => {
     dispatch(fetchPoint())
   }, [])
+
   
   return (
-    <div>
+    <>
       <MainNavbar />
-      <MapContainer center={[-2.994494, 120.195465]} zoom={5} >
+      <MapContainer center={[-2.994494, 120.195465]} zoom={5}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -30,7 +31,7 @@ function LightMap() {
           </Marker>
         ))}
       </MapContainer>
-    </div>
+    </>
   );
 }
 
