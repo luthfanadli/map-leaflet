@@ -13,8 +13,8 @@ function DarkMap() {
   }, [])
 
   return (
-    <div>
-      <MainNavbar />
+    <>
+      <MainNavbar/>
       <MapContainer center={[-2.994494, 120.195465]} zoom={5} >
         <TileLayer
           attribution='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
@@ -30,7 +30,7 @@ function DarkMap() {
           </Marker>
         ))}
       </MapContainer>
-    </div>
+    </>
   );
 }
 
