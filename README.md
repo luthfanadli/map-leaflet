@@ -1,6 +1,5 @@
-# Bhumi-Varta-Technology
 
-## A simple map application that displays point marks and regional lists
+## Map application that displays point marks and regional lists
 
 Run Project : 
 1. cd bvt
