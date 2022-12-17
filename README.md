@@ -2,7 +2,7 @@
 ## Map application that displays point marks and regional lists
 
 Run Project : 
-1. cd bvt
+1. cd map-app
 2. npm start 
 3. Project running at: http://localhost:3000
 
@@ -13,7 +13,7 @@ Run JSON-Server :
 
 Tech Stack:
 - React
-- Leaflet
+- React Leaflet
 - React Redux
 - React Router
 - Bootstrap
